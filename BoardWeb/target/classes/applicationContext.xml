@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- <bean id="tv" class="com.ezen.ploymorphism.SamsungTV" init-method="initMethod" 
+destroy-method="destroyMethod" lazy-init="true" scope="prototype"></bean> -->
+
+<!-- 생성자 주입 -->
+<!-- <bean id="tv" class="com.ezen.ploymorphism.SamsungTV">
+<constructor-arg ref="apple"></constructor-arg>
+<constructor-arg value="35000"></constructor-arg>
+</bean> -->
+
+<!-- setter 주입  -->
+<bean id="tv" class="com.ezen.ploymorphism.SamsungTV">
+<property name="speaker" ref="apple"></property>
+<property name="price" value="39000"></property>
+</bean>
+
+<bean id="tv2" class="com.ezen.ploymorphism.LgTV">
+</bean>
+
+<bean id="sony" class="com.ezen.ploymorphism.SonySpeaker"></bean>
+
+<bean id="apple" class="com.ezen.ploymorphism.AppleSpeaker"></bean>
+</beans>
